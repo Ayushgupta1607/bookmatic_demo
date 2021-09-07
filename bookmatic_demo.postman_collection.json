@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "d85c204a-777b-41f6-a570-3c0d72221165",
+		"name": "bookmatic_demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "xyz1@b.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "aay",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "nfnfndnd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1415/api/v1/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "1415",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "xyz1@b.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1415/api/v1/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "1415",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "create transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhMzkzMjcyLTFjZWYtNDllYS1hNzY4LWJhYzFiNzJkMjY2OSIsImVtYWlsIjoieHl6MUBiLmNvbSIsImlhdCI6MTYzMTAxNjgxNCwiZXhwIjoxNjMzNjA4ODE0fQ.UGqpwb_WcG_woWblKrElgX48jD9AxxvsSIa-cpdJfFU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "transaction_type",
+									"value": "recieved",
+									"type": "text"
+								},
+								{
+									"key": "party_name",
+									"value": "ddjjsj",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1415/api/v1/transaction/create",
+							"host": [
+								"localhost"
+							],
+							"port": "1415",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "complete transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhMzkzMjcyLTFjZWYtNDllYS1hNzY4LWJhYzFiNzJkMjY2OSIsImVtYWlsIjoieHl6MUBiLmNvbSIsImlhdCI6MTYzMTAxNjgxNCwiZXhwIjoxNjMzNjA4ODE0fQ.UGqpwb_WcG_woWblKrElgX48jD9AxxvsSIa-cpdJfFU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:1415/api/v1/transaction/update?transaction_id=10ed1388-633c-4829-8d67-b19d1b39a544",
+							"host": [
+								"localhost"
+							],
+							"port": "1415",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"update"
+							],
+							"query": [
+								{
+									"key": "transaction_id",
+									"value": "10ed1388-633c-4829-8d67-b19d1b39a544"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
